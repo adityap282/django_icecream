@@ -1,0 +1,44 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{product.imageURL}}">
+			<div class="box-element product">
+				<h6><strong>{{product.name}}</strong></h6>
+				<hr>
+
+				<!-- Add to cart Button -->
+
+				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+
+				<h4 style="display: inline-block; float: right"><strong>₹{{product.price}}</strong></h4>
+
+				<!-- Customization -->
+
+				<div><b>Cone Wafer</b><br />
+					<label class="checkbox-inline"><input type="checkbox" value="">plain</label>
+					<label class="checkbox-inline"><input type="checkbox" value="">chocolate</label>
+					<label class="checkbox-inline"><input type="checkbox" value="">waffle</label>					
+				</div>
+				<div><b>Base Flavour</b><br />
+					<label class="checkbox-inline"><input type="checkbox" value="">Vanilla</label>
+					<label class="checkbox-inline"><input type="checkbox" value="">Chocolate</label>
+					<label class="checkbox-inline"><input type="checkbox" value="">Mango</label>
+					<label class="checkbox-inline"><input type="checkbox" value="">Strawberry</label>
+					<label class="checkbox-inline"><input type="checkbox" value="">Coconut</label>
+				</div>
+
+				<div><b>Toppings</b><br />
+					<label class="checkbox-inline"><input type="checkbox" value="">Tuti Fruti</label>
+					<label class="checkbox-inline"><input type="checkbox" value="">Chocolate Chips</label>
+					<label class="checkbox-inline"><input type="checkbox" value="">Roasted Almonds</label>
+				</div>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+{% endblock content %}
